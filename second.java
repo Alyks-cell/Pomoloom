@@ -54,7 +54,7 @@ public class second extends JFrame {
                     updateStatusLabel();
 
                     if (elapsedTime >= totalTimeInSeconds) {
-                        playSound("C:/Users/HP/IdeaProjects/first/src/alarm.wav");
+                        playSound("C:/Users/HP/IdeaProjects/first/index/alarmm.wav");
 
                         if (isWorkSession) {
                             JOptionPane.showMessageDialog(second.this, "Work session completed! Time for a break.");
@@ -127,16 +127,16 @@ public class second extends JFrame {
         one.setText("Cycle: " + currentCycle + "/" + cycleCount);
     }
 
-    private void playSound(String alarm) {
+    private void playSound(String alarmm) {
         try {
-            File soundFile = new File(alarm);
+            File soundFile = new File(alarmm);
             if (soundFile.exists()) {
                 AudioInputStream audioStream = AudioSystem.getAudioInputStream(soundFile);
                 Clip clip = AudioSystem.getClip();
                 clip.open(audioStream);
                 clip.start();
             } else {
-                System.err.println("Sound file not found: " + alarm);
+                System.err.println("Sound file not found: " + alarmm);
             }
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace();

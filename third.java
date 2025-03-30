@@ -8,7 +8,7 @@ public class third extends JFrame {
     private JLabel completed;
     private JLabel total;
     private JLabel qo;
-    private JTextField notesArea; // This must match your GUI component name
+    private JTextField notesArea;
     private JButton startButton;
     private JButton saveButton;
     private JButton exitButton;
@@ -20,7 +20,7 @@ public class third extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        // 🛠️ Ensure these are NOT null. If they are, fix in GUI Designer.
+
         if (completed != null)
             completed.setText("📌 Completed Cycles: ✅ " + totalMinutes + " / " + totalCycles);
         else
@@ -31,22 +31,40 @@ public class third extends JFrame {
         else
             System.out.println("❗ 'total' label not initialized.");
 
-        // 🔁 Restart session - go back to second form
+        startButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
         startButton.addActionListener(e -> {
             dispose();
             new second(25, 5, 4).setVisible(true);
         });
 
-        // 💾 Save notes
+        saveButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
         saveButton.addActionListener(e -> {
             String notes = notesArea.getText();
             JOptionPane.showMessageDialog(this, "Notes saved:\n" + notes);
-            // Optionally write to file
+
         });
 
-        // 🚪 Exit
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
         exitButton.addActionListener(e -> {
             System.exit(0);
         });
+
+
+
     }
 }
